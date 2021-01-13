@@ -1,0 +1,58 @@
+{% extends "layout.njk" %}
+
+{% block head %}
+    <title>Courses - Desafio 3.2</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+{% endblock %}
+
+{% block content %}
+
+    <div id="wrapper">
+        <h1>My Favorite Posts</h1>
+    </div>
+
+    <section class="cards">
+        {% for item in items %}
+            <div class="card" id="{{ item.id }}">
+                <div class="CardImgContainer">
+                    <img src="{{ item.img_url }}" alt="Imagem de {{ item.title }}">
+                </div>
+                
+                <div class="cardContainer">
+                    <p>{{ item.title }}</p>
+                </div>
+
+                <div class="cardInfo">
+                    <p>{{ item.author }}</p>
+                    <p class="tempoLeitura">{{ item.timeToRead }}</p>
+                </div>
+            </div>
+        {% endfor %}
+    </section>
+
+    <div class="ModalOverlay">
+        <div class="modal">
+            <a class="MaximizeModal">
+                <i class="material-icons">maximize</i>
+            </a>
+
+            <a class="CloseModal">
+                <i class="material-icons">close</i>
+            </a>
+
+            <div class="ModalContent">
+                <iframe src="" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+
+
+    <div id="linksFooter" class="links">
+        <a href="https://github.com/Rocketseat" target="_blank">Github</a>
+        <a href="https://www.facebook.com/rocketseat" target="_blank">Facebook</a>
+        <a href="https://www.instagram.com/rocketseat_oficial" target="_blank">Instragram</a>
+    </div>
+
+{% endblock %}}
