@@ -38,6 +38,20 @@ server.get("/courses", function(req, res){
     return res.render("courses", { items: posts }) //enviando items para ser usado no courses
 })
 
+server.get("/courses/:id", function(req, res) {
+    const id = req.params.id;
+
+    const post = posts.find(function(post){
+        return post.id == id
+    })
+
+    if(!post){
+        return res.render("not-found")
+    }
+
+    return res.render("course", { item:post } )
+})
+
 server.use(function(req, res) {
     res.status(404).render("not-found");
   });

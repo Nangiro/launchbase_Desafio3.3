@@ -186,3 +186,22 @@ iframe {
     text-align: center;
     font-size: 24px;
 }
+
+/* = = = = POST PAGE = = = = */
+.post {
+    margin: 0 auto; /* Em cima e embaixo eh zero e nas laterais se alinha ao meio */
+    max-width: 1000px;
+
+}
+
+.CardPostContainer {
+    position: relative;
+    padding-top: 62.5%;
+}
+
+.CardPostContainer iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+}
